@@ -1,14 +1,65 @@
 <head>
-  <title>rock-paper-scissors</title>
+ 	<title>Rock Paper Scissors</title>
+ 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+ 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
-
-  {{> hello}}
+	{{> main}}
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="main">
+	<div class="main-container">
+		{{#if validPlayer}}
+			{{> game}}
+		{{else}}
+			{{> invalidPlayer}}
+		{{/if}}
+	</div>
+</template>
+
+<template name="invalidPlayer">
+	<h1>Not A Valid Player</h1>
+</template>
+
+<template name="game">
+ 	<div class="game-container clearfix">
+ 		
+		<!-- <div style="height:100%"> -->
+			<div style="display:inline-block; height:100%; vertical-align:middle;"></div>
+			<div style="display:inline-block; vertical-align:middle; width:99%;">
+
+			{{#if gameOver}}
+
+ 				<div>
+ 
+	 				<div class="text-center {{playerResult}}">
+	 					<h1>{{resultTitle}}</h1>
+	 				</div>
+ 					<div class="panel {{otherPlayerResult}}">
+			 			<span class="final-selection"><i class="fa fa-hand-{{otherPlayerSelection}}-o"></i></span>
+ 					</div>
+ 					<div class="panel {{playerResult}}">
+			 			<span class="final-selection"><i class="fa fa-hand-{{playerSelection}}-o"></i></span>
+ 					</div>
+ 				</div>
+ 				<div>
+		 			<button class="reset-button">Reset Game</button>
+	 			</div>
+
+ 			{{else}}
+
+ 				{{#if madeSelection}}
+		 			<span class="final-selection"><i class="fa fa-hand-{{playerSelection}}-o"></i></span>
+		 		{{else}}
+	 				Choose your play:<br/>
+		 			<button class="selection-button" data-value="rock"><i class="fa fa-hand-rock-o"></i></button>
+		 			<button class="selection-button" data-value="paper"><i class="fa fa-hand-paper-o"></i></button>
+		 			<button class="selection-button" data-value="scissors"><i class="fa fa-hand-scissors-o"></i></button>
+		 		{{/if}}
+			{{/if}}
+
+ 		</div>
+ 			
+ 	</div>
 </template>

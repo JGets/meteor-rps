@@ -1,1 +1,78 @@
-/* CSS declarations go here */
+
+.clearfix:before,
+.clearfix:after{
+  display: table;
+  content: " ";
+}
+.clearfix:after{
+  clear: both;
+}
+
+html,
+body{
+	font-size:16px;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.main-container{
+	position:absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	width:100%;
+	height:100%;
+	padding:25pt;
+	box-sizing:border-box;
+	background:#F6F6F6;
+	text-align:center;
+}
+
+
+.game-container{
+	height:100%;
+}
+
+.panel{
+	float:left;
+	/*height:100%;*/
+	width: calc( 49.9% - 40pt );
+	box-sizing:border-box;
+	padding:10pt;
+	margin:0 10pt;
+
+	/*border:1px solid #ddd;
+	border-radius:6pt;*/
+}
+
+.game-panel.short{
+	height:80%;
+}
+
+.winner{
+	/*background:#90ee90;*/
+	color:#90ee90;
+}
+.loser{
+	/*background:#f08080;*/
+	color:#f08080;
+}
+
+.tie{
+	color:#ffd700;
+}
+
+button.selection-button{
+	font-size:48pt;
+	border:none;
+	background: transparent;
+	cursor:pointer;
+}
+
+.final-selection{
+	font-size:72pt;
+}
+
+
+
+
