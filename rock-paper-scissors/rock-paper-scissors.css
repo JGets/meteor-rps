@@ -64,5 +64,14 @@ button.selection-button{
 }
 
 
-
+button.reset-button{
+	font-size:14pt;
+	background:transparent;
+	border:2px solid #777;
+	border-radius:6pt;
+	/*border:none;*/
+	cursor:pointer;
+	color:#777;
+	/*text-decoration:underline;*/
+}
 
