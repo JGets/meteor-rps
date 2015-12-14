@@ -5,10 +5,6 @@
 </head>
 
 <body>
-	{{> main}}
-</body>
-
-<template name="main">
 	<div class="main-container">
 		{{#if validPlayer}}
 			{{> game}}
@@ -16,7 +12,8 @@
 			{{> invalidPlayer}}
 		{{/if}}
 	</div>
-</template>
+</body>
+
 
 <template name="invalidPlayer">
 	<h1>Not A Valid Player</h1>
@@ -24,15 +21,10 @@
 
 <template name="game">
  	<div class="game-container clearfix">
- 		
-		<!-- <div style="height:100%"> -->
-			<div style="display:inline-block; height:100%; vertical-align:middle;"></div>
-			<div style="display:inline-block; vertical-align:middle; width:99%;">
-
+		<div style="display:inline-block; height:100%; vertical-align:middle;"></div>
+		<div style="display:inline-block; vertical-align:middle; width:99%;">
 			{{#if gameOver}}
-
- 				<div>
- 
+ 				<div class="clearfix">
 	 				<div class="text-center {{playerResult}}">
 	 					<h1>{{resultTitle}}</h1>
 	 				</div>
@@ -46,9 +38,7 @@
  				<div>
 		 			<button class="reset-button">Reset Game</button>
 	 			</div>
-
  			{{else}}
-
  				{{#if madeSelection}}
 		 			<span class="final-selection"><i class="fa fa-hand-{{playerSelection}}-o"></i></span>
 		 		{{else}}
@@ -58,8 +48,6 @@
 		 			<button class="selection-button" data-value="scissors"><i class="fa fa-hand-scissors-o"></i></button>
 		 		{{/if}}
 			{{/if}}
-
- 		</div>
- 			
+ 		</div>	
  	</div>
 </template>

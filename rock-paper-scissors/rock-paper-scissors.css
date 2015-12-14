@@ -35,29 +35,19 @@ body{
 
 .panel{
 	float:left;
-	/*height:100%;*/
 	width: calc( 49.9% - 40pt );
 	box-sizing:border-box;
 	padding:10pt;
 	margin:0 10pt;
-
-	/*border:1px solid #ddd;
-	border-radius:6pt;*/
 }
 
-.game-panel.short{
-	height:80%;
-}
 
 .winner{
-	/*background:#90ee90;*/
 	color:#90ee90;
 }
 .loser{
-	/*background:#f08080;*/
 	color:#f08080;
 }
-
 .tie{
 	color:#ffd700;
 }
