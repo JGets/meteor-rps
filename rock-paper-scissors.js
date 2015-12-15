@@ -19,7 +19,9 @@ if (Meteor.isClient) {
 		//Initialize the game
 		Meteor.call("initGame", function(error, result){
 			if(error){
-				//TODO: handle error
+				//TODO: make a better user notification for the error
+				alert("An error occurred during game initialization");
+				console.error(error);
 			}
 			else{
 				Session.set('gameID', result);
@@ -74,7 +76,6 @@ if (Meteor.isClient) {
 		* Retrieves this player's selection
 		*/
 		playerSelection : function(){
-			// return Session.get("selected")
 			var g = Games.findOne(Session.get('gameID'));
 			if(Session.get('playerID') == 1){
 				return g.p1Play;
